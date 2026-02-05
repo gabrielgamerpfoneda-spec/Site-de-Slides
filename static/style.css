@@ -128,3 +128,17 @@ iframe {
         height: 500px; /* Ajusta a altura do slide para não sumir na tela */
     }
 }
+/* Isso faz o slide ocupar a largura da tela, mas sem estourar */
+iframe, embed, object {
+    width: 100%;       /* Ocupa toda a largura disponível */
+    max-width: 100%;   /* Garante que não passe da borda */
+    height: 80vh;      /* Define uma altura boa (80% da altura da tela) */
+    border: none;
+}
+
+/* Ajuste específico para celular */
+@media (max-width: 600px) {
+    iframe {
+        height: 60vh;  /* Diminui um pouco a altura no celular para caber melhor */
+    }
+}

@@ -4,6 +4,7 @@
     <title>Dashboard de Slides</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <div class="layout">
@@ -35,5 +36,12 @@
             {% endif %}
         </main>
     </div>
+    <div class="slide-container">
+    <iframe src="{{ url_for('static', filename='slide1.pdf') }}"></iframe>
+    <br>
+    <a href="{{ url_for('static', filename='slide1.pdf') }}" target="_blank" class="btn-mobile">
+       📱 Abrir slide em tela cheia
+    </a>
+</div>
 </body>
 </html>
