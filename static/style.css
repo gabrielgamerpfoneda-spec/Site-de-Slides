@@ -108,3 +108,23 @@ iframe {
     color: #ef4444;
     text-decoration: none;
 }
+/* Isso só vale para telas com menos de 600px (celulares) */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        width: 95%; /* Faz a caixa ocupar quase toda a largura */
+        margin: 0 auto;
+    }
+
+    input[type="password"], button {
+        width: 100%; /* Botão e campo de senha ficam grandes para facilitar o toque */
+        font-size: 18px; /* Aumenta a letra para ser fácil de ler */
+    }
+
+    iframe {
+        height: 500px; /* Ajusta a altura do slide para não sumir na tela */
+    }
+}
