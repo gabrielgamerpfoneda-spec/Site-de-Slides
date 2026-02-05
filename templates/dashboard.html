@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard de Slides</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>📚 Meus Projetos</h3>
+            </div>
+            
+            <nav class="slide-list">
+                {% for slide in slides %}
+                <a href="{{ url_for('dashboard', slide=slide) }}" 
+                   class="slide-item {% if slide == slide_atual %}active{% endif %}">
+                    📄 {{ slide }}
+                </a>
+                {% endfor %}
+            </nav>
+
+            <a href="{{ url_for('logout') }}" class="logout">Sair do Sistema</a>
+        </aside>
+
+        <main class="main-content">
+            {% if slide_atual %}
+                <iframe src="{{ url_for('static', filename=slide_atual) }}#toolbar=0"></iframe>
+            {% else %}
+                <div style="text-align: center; margin-top: 100px;">
+                    <h2>Nenhum PDF encontrado na pasta static!</h2>
+                    <p>Coloque seus arquivos .pdf na pasta 'static' para que apareçam aqui.</p>
+                </div>
+            {% endif %}
+        </main>
+    </div>
+</body>
+</html>
